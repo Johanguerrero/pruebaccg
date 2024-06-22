@@ -1,10 +1,17 @@
 form {
-  max-width: 400px;
   margin: auto;
+  width: 90%; 
+  max-width: 800px; 
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: #fff;
+  padding: 2rem;
+  
 }
 
 form div {
-  margin-bottom: 10px;
+  margin-bottom: 10 px;
 }
 
 form label {
@@ -30,6 +37,7 @@ form button {
   color: white;
   border: none;
   cursor: pointer;
+  
 }
 
 form button:hover {
