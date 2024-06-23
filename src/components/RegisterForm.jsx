@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './RegisterForm.css';
+import '../index.css'
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
@@ -25,17 +26,17 @@ const RegisterForm = () => {
     const phonePattern = /^\d{10}$/;
 
     if (!emailPattern.test(formData.email)) {
-      alert('Please enter a valid email address.');
+      alert('Por favor ingrese un correo válido.');
       return;
     }
 
     if (!phonePattern.test(formData.phone)) {
-      alert('Please enter a valid phone number with 10 digits.');
+      alert('Ingrese un número de celular con 10 dígitos.');
       return;
     }
 
     setTimeout(() => {
-      setConfirmationMessage('Registration successful!');
+      setConfirmationMessage('¡Registo exitoso!');
       setFormData({
         name: '',
         phone: '',
