@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './RegisterForm.css';
-import '../index.css'
+import '../index.css';
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
@@ -9,8 +9,9 @@ const RegisterForm = () => {
     email: '',
     terms: false,
   });
-  const [confirmationMessage, setConfirmationMessage] = useState('');
-
+  const [confirmationMessage, setConfirmationMessage] = useState(''); 
+  
+  // Función para manejar cambios en los inputs del formulario
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -19,12 +20,15 @@ const RegisterForm = () => {
     });
   };
 
+  // Función para manejar el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Expresiones regulares para validar el email y el número de celular
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phonePattern = /^\d{10}$/;
 
+    // Validaciones de los campos email y phone
     if (!emailPattern.test(formData.email)) {
       alert('Por favor ingrese un correo válido.');
       return;
@@ -35,8 +39,10 @@ const RegisterForm = () => {
       return;
     }
 
+    // Simular un registro exitoso después de 500ms
     setTimeout(() => {
-      setConfirmationMessage('¡Registo exitoso!');
+      setConfirmationMessage('¡Registro exitoso!');
+      // Limpiar el formulario después del registro exitoso
       setFormData({
         name: '',
         phone: '',
@@ -48,6 +54,7 @@ const RegisterForm = () => {
 
   return (
     <div>
+      {/* Formulario de registro */}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Nombre:</label>
@@ -69,6 +76,7 @@ const RegisterForm = () => {
         </div>
         <button type="submit">Registrarme</button>
       </form>
+      {/* Mensaje de confirmación que se muestra después del registro exitoso */}
       {confirmationMessage && <p className="confirmation-message">{confirmationMessage}</p>}
     </div>
   );

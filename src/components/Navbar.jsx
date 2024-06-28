@@ -4,8 +4,9 @@ import './Navbar.css';
 import logo from '../images/sitio-web.png';
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); //Determinar si el menú está abierto o cerrado
 
+  // Función para alternar el estado del menú
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
   };
